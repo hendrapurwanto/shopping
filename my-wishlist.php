@@ -145,7 +145,7 @@ $num=mysqli_num_rows($rt);
 						</div>
 						<?php } ?>
 						<div class="price">Rp. 
-							<?php echo htmlentities($row['pprice']);?>.00
+							<?php echo htmlentities(number_format($row['pprice']),0,',','.');?>.00
 							<span>$900.00</span>
 						</div>
 					</td>

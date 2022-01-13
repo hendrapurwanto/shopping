@@ -226,10 +226,10 @@ $num=mysqli_num_rows($rt);
 				             
 			              </div>
 		            </td>
-					<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rp"." ".$row['productPrice']; ?>.00</span></td>
-<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rp"." ".$row['shippingCharge']; ?>.00</span></td>
+					<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rp"." ".number_format($row['productPrice'],0,',','.'); ?></span></td>
+<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "Rp"." ".number_format($row['shippingCharge'],0,',','.'); ?></span></td>
 
-					<td class="cart-product-grand-total"><span class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?>.00</span></td>
+					<td class="cart-product-grand-total"><span class="cart-grand-total-price">Rp. <?php echo number_format($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge'],0,',','.'); ?></span></td>
 				</tr>
 
 				<?php } }
@@ -308,7 +308,7 @@ while ($rt=mysqli_fetch_array($qry)) {
 				<th>
 					
 					<div class="cart-grand-total">
-						Grand Total<span class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
+						Grand Total<span class="inner-left-md"> <?php echo number_format($_SESSION['tp']="$totalprice". "",0,',','.'); ?></span>
 					</div>
 				</th>
 			</tr>

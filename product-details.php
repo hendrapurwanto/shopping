@@ -169,10 +169,10 @@ while ($rws=mysqli_fetch_array($ret)) {
 
 							<div class="product-price">	
 								<span class="price">
-									Rp. <?php echo htmlentities($rws['productPrice']);?>.00
+									Rp. <?php echo htmlentities(number_format($rws['productPrice'],0,',','.'));?>
 								</span>
 									
-							    <span class="price-before-discount">Rp.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>					
+							    <span class="price-before-discount">Rp.<?php echo htmlentities(number_format($row['productPriceBeforeDiscount'],0,',','.'));?></span>					
 							
 							</div><!-- /.product-price -->
 							
@@ -367,8 +367,8 @@ $num=mysqli_num_rows($rt);
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price">Rp. <?php echo htmlentities($row['productPrice']);?></span>
-											<span class="price-strike">Rp.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+											<span class="price">Rp. <?php echo htmlentities(number_format($row['productPrice'],0,',','.'));?></span>
+											<span class="price-strike">Rp.<?php echo htmlentities(number_format($row['productPriceBeforeDiscount'],0,',','.'));?></span>
 										</div>
 									</div>
 
@@ -609,9 +609,9 @@ while($rw=mysqli_fetch_array($qry))
 
 			<div class="product-price">	
 				<span class="price">
-					Rp.<?php echo htmlentities($rw['productPrice']);?>			</span>
+					Rp.<?php echo htmlentities(number_format($rw['productPrice'],0,',','.'));?>			</span>
 										     <span class="price-before-discount">Rp.
-										     <?php echo htmlentities($rw['productPriceBeforeDiscount']);?></span>
+										     <?php echo htmlentities(number_format($rw['productPriceBeforeDiscount'],0,',','.'));?></span>
 									
 			</div><!-- /.product-price -->
 			
